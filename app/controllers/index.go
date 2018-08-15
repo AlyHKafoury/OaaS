@@ -1,9 +1,9 @@
 package controllers
 
 import (
-  "net/http"
+	"net/http"
 )
 
-func Index(w http.ResponseWriter, r *http.Request){
-  w.Write([]byte("OaaS..!"))
+func Index(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("OaaS..!"))
 }
