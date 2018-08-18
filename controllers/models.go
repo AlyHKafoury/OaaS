@@ -8,7 +8,7 @@ import (
 )
 
 type model map[string]string
-type models map[string]model
+type multiplemodels map[string]model
 type updateRequest struct {
 	DropColumn   []string `json:DropColumn`
 	CreateColumn map[string]string `json:CreateColumn`
@@ -36,7 +36,7 @@ func CreateModel(w http.ResponseWriter, r *http.Request) {
 }
 
 func SetModels(w http.ResponseWriter, r *http.Request) {
-	var request_models models
+	var request_models multiplemodels
 	decoder := json.NewDecoder(r.Body)
 
 	decoder.Decode(&request_models)

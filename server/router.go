@@ -1,7 +1,7 @@
 package main
 
 import (
-	"AlyHKafoury/oaas/app/controllers"
+	"github.com/AlyHKafoury/oaas/app/controllers"
 	"github.com/gorilla/mux"
 )
 
