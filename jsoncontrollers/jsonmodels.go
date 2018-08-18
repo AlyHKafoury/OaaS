@@ -1,14 +1,14 @@
-package controllers
+package jsoncontrollers
 
 import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
+	"github.com/AlyHKafoury/oaas/database"
+	"github.com/AlyHKafoury/oaas/userdefinedmodels"
 )
 
-type model map[string]string
-type multiplemodels map[string]model
 type updateRequest struct {
 	DropColumn   []string `json:DropColumn`
 	CreateColumn map[string]string `json:CreateColumn`
@@ -25,10 +25,10 @@ func GetModel(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateModel(w http.ResponseWriter, r *http.Request) {
-	var request_model model
+	var request_model userdefinedmodels.Usermodel
 	vars := mux.Vars(r)
 	decoder := json.NewDecoder(r.Body)
-
+	database.CreateModel()
 	decoder.Decode(&request_model)
 	fmt.Println("%v+", request_model)
 	fmt.Println("%v+", vars)
@@ -36,7 +36,7 @@ func CreateModel(w http.ResponseWriter, r *http.Request) {
 }
 
 func SetModels(w http.ResponseWriter, r *http.Request) {
-	var request_models multiplemodels
+	var request_models userdefinedmodels.Multipleusermodels
 	decoder := json.NewDecoder(r.Body)
 
 	decoder.Decode(&request_models)
