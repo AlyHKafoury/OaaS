@@ -28,10 +28,10 @@ func CreateModel(w http.ResponseWriter, r *http.Request) {
 	var requestModel userdefinedmodels.UserModel
 	vars := mux.Vars(r)
 	decoder := json.NewDecoder(r.Body)
-	database.CreateModel()
 	decoder.Decode(&requestModel)
 	fmt.Println("%v+", requestModel)
 	fmt.Println("%v+", vars)
+	database.CreateModel(&requestModel)
 	w.Write([]byte(requestModel["aly"]))
 }
 

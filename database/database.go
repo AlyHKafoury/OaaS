@@ -4,7 +4,7 @@ import (
     _ "github.com/go-sql-driver/mysql"
     "database/sql"
     "fmt"
-    //"github.com/AlyHKafoury/oaas/userdefinedmodels"
+    "github.com/AlyHKafoury/oaas/userdefinedmodels"
 )
 
 var db sql.DB
@@ -14,6 +14,6 @@ func init (){
   fmt.Println("%v+ %v+",db,err)
 }
 
-func CreateModel(){
-  fmt.Println("DB POWER")
+func CreateModel(userModel *userdefinedmodels.UserModel){
+  fmt.Println("%v+", userModel)
 }
