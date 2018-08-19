@@ -15,5 +15,5 @@ func init (){
 }
 
 func CreateModel(){
-  fmt.Println("%v+",db)
+  fmt.Println("DB POWER")
 }

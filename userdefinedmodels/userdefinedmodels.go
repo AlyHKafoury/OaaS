@@ -1,4 +1,4 @@
 package userdefinedmodels
 
-type Usermodel map[string]string
-type Multipleusermodels map[string]Usermodel
+type UserModel map[string]string
+type MultipleUserModels map[string]UserModel
